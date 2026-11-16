@@ -53,7 +53,7 @@ function add(message, type) {
 async function callGemini(promptText) {
 
     if (!API_KEY) {
-        throw new Error("API key missing. Reload and enter your key.");
+        throw new Error(AQ.Ab8RN6LCjgz41-hWxNyQfyVlp9dek8VcFFW5-V2t7iqNn8jMWw);
     }
 
     let lastError;
