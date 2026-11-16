@@ -1,48 +1,207 @@
 
-/* ===== CHAT MESSAGES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: #000;
+    color: #00ffff;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    margin-top: 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 12px #00ffff;
+}
+
+header p {
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: 0.6;
+    margin-top: 8px;
+}
+
+/* JARVIS CORE */
+
+.core {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 30px auto;
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.r1 {
+    inset: 0;
+    border-top-color: transparent;
+    animation: spin 3s linear infinite;
+}
+
+.r2 {
+    inset: 20px;
+    border-bottom-color: transparent;
+    animation: spin 2s linear infinite reverse;
+}
+
+.center {
+    position: absolute;
+    inset: 50px;
+    background: #00cfff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #00ffff;
+    animation: pulse 1.5s infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+}
+
+/* CORE TEXT */
+
+.core-text {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+/* SYSTEM STATUS */
+
+.status {
+    border: 1px solid rgba(0,255,255,0.3);
+    background: rgba(0,255,255,0.05);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.status h2 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.on {
+    color: #00ff00;
+}
+
+.off {
+    color: #ff3333;
+}
+
+/* CHAT BOX */
+
+.chat {
+    border: 1px solid rgba(0,255,255,0.3);
+    height: 150px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 35px;
+}
 
 .msg {
-    padding: 12px 15px;
-    margin: 12px 0;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 1.6;
-    word-wrap: break-word;
-    animation: fadeIn 0.4s ease;
+    margin: 6px 0;
+    padding: 8px;
+    border-left: 2px solid #00ffff;
+    background: rgba(0,255,255,0.08);
 }
 
-.user {
-    color: #00dfff;
-    text-align: right;
-    border-right: 3px solid #00dfff;
-    background: rgba(0, 180, 255, 0.08);
-    text-shadow: 0 0 5px #00cfff;
+.msg.user {
+    border-left-color: #ffffff;
+    color: white;
 }
 
-.ai {
-    color: #42ff78;
-    text-align: left;
-    border-left: 3px solid #42ff78;
-    background: rgba(0, 255, 100, 0.06);
-    text-shadow: 0 0 5px #00ff55;
+/* INPUT AREA */
+
+.input-area {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+input {
+    flex: 1;
+    min-width: 0;
+    background: #000;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 12px;
+    outline: none;
+    font-size: 12px;
 }
 
-.chat::-webkit-scrollbar {
-    width: 5px;
+input::placeholder {
+    color: #666;
 }
 
-.chat::-webkit-scrollbar-thumb {
+button {
     background: #00cfff;
-    border-radius: 10px;
+    color: #000;
+    border: none;
+    padding: 12px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+button:active {
+    background: #ffffff;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    body {
+        padding: 15px;
+    }
+
+    .row {
+        font-size: 10px;
+    }
+
+    button {
+        padding: 10px 12px;
+    }
 }
