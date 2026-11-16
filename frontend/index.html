@@ -27,33 +27,45 @@
 
         <div class="row">
             <span>AI CORE</span>
-            <b class="on">● ONLINE</b>
+            <b class="on" id="ai-status">● ONLINE</b>
         </div>
 
         <div class="row">
             <span>NETWORK</span>
-            <b class="on">● ONLINE</b>
+            <b class="off" id="network-status">● STANDBY</b>
         </div>
 
         <div class="row">
             <span>VOICE</span>
-            <b class="off">● LOCKED</b>
+            <b class="off" id="voice-status">● LOCKED</b>
         </div>
 
         <div class="row">
             <span>MEMORY</span>
-            <b class="off">● LOCKED</b>
+            <b class="on">● ACTIVE</b>
         </div>
     </div>
 
-    <div class="chat" id="chat"></div>
+    <div class="chat" id="chat">
+        <div class="msg ai">
+            J.A.R.V.I.S: Systems initializing...
+        </div>
+        <div class="msg ai">
+            J.A.R.V.I.S: Hello! How may I assist you?
+        </div>
+    </div>
 
     <div class="input-area">
-        <input type="text" id="msg" placeholder="Ask J.A.R.V.I.S...">
-        <button id="send">SEND</button><button id="mic-btn">🎙</button>
+        <input
+            type="text"
+            id="msg"
+            placeholder="Ask J.A.R.V.I.S..."
+            autocomplete="off"
+        >
+        <button id="send">SEND</button>
+        <button id="mic-btn">🎙</button>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
